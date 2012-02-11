@@ -5,7 +5,7 @@ class LookupsController < ApplicationController
 
   def search
     @domain = params[:domain]
-    @lookups = Lookup.where(:domain=>@domain)
+    @lookups = Lookup.where(:domain=>@domain).order("trust DESC")
   end
 
   def dump
@@ -13,6 +13,22 @@ class LookupsController < ApplicationController
 
     respond_to do |format|
       format.json {render :json => @lookups}
+    end
+  end
+
+  def vote
+    @lookup = Lookup.find_by_id(params[:id])
+    @vote = params[:vote]
+
+    if @lookup
+      @lookup.trust = @vote
+      if @lookup.save
+        render :text => "Lookup saved"
+      else
+        render :text => "There was some error"
+      end
+    else
+      render :text => "Lookup not found"
     end
   end
 end

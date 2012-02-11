@@ -1,2 +1,27 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+function vote(evt, vote) {
+  var id = $(evt.currentTarget).data('id');
+  var url = 'http://'+location.host+'/vote/';
+  var data = {'vote': vote, 'id': id};
+
+  $('.trust[data-id='+id+']').html(vote+'.0');
+
+  $.post(url, data, function(response) {
+    alert(response);
+    showFlashMessage(response);
+  });
+}
+
+function voteUp(evt) {
+  evt && evt.preventDefault();
+  vote(evt, 1);
+}
+
+function voteDown(evt) {
+  evt && evt.preventDefault();
+  vote(evt, 0);
+}
+
+$(function() {
+  $('.vote-up').click(voteUp);
+  $('.vote-down').click(voteDown);
+});

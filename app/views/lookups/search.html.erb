@@ -2,16 +2,28 @@
   <%= render 'form' %>
 
   <table class="table table-stripped">
-  <% @lookups.each do |lookup| %>
     <thead>
       <th>Domain</th>
       <th>Ip</th>
       <th>Trust</th>
+      <th></th>
     </thead>
+
+  <% @lookups.each do |lookup| %>
     <tr>
       <td><%= lookup.domain %></td>
       <td><%= lookup.ip %></td>
-      <td><%= lookup.trust %></td>
+      <td class="trust" data-id="<%= lookup.id %>"><%= lookup.trust %></td>
+      <td>
+        <a href="#" class="vote-up btn btn-success" data-id="<%= lookup.id %>">
+          <i class="icon-ok"></i>
+          Vote up
+        </a>
+        <a href="#" class="vote-down btn btn-danger" data-id="<%= lookup.id %>">
+          <i class="icon-remove"></i>
+          Vote down
+        </a>
+      </td>
     </tr>
   <% end %>
 </div>

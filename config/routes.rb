@@ -4,4 +4,5 @@ Censormenot::Application.routes.draw do
   post "search", :to => "lookups#search"
 
   get "dump", :to => "lookups#dump"
+  post "vote", :to => "lookups#vote"
 end
