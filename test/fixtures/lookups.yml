@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  domain: MyString
+  ip: MyString
+  trust: 1.5
+
+two:
+  domain: MyString
+  ip: MyString
+  trust: 1.5
