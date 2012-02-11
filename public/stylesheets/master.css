@@ -9,3 +9,16 @@
 #search-form input[type=text] {
   padding: 10px 15px;
 }
+
+#search-results td, th {
+  font-size: 15px;
+}
+
+.vote {
+  margin: 0px 5px;
+}
+
+.vote img {
+  margin-top: -8px;
+}
+

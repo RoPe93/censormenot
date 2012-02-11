@@ -2,10 +2,10 @@
   <%= render 'form' %>
 
 <% if @lookups.size > 0 %>
-  <table class="table table-stripped">
+  <table class="table table-stripped" id="search-results">
     <thead>
       <th>Domain</th>
-      <th>Ip</th>
+      <th>IP</th>
       <th>Trust</th>
       <th></th>
     </thead>
@@ -16,13 +16,11 @@
       <td><%= lookup.ip %></td>
       <td class="trust" data-id="<%= lookup.id %>"><%= lookup.trust %></td>
       <td style="text-align: right" width="25%">
-        <a href="#" class="vote-up btn btn-success" data-id="<%= lookup.id %>">
-          <i class="icon-ok"></i>
-          Vote up
+        <a href="#" class="vote vote-up" data-id="<%= lookup.id %>">
+          <img src="/images/up.png">
         </a>
-        <a href="#" class="vote-down btn btn-danger" data-id="<%= lookup.id %>">
-          <i class="icon-remove"></i>
-          Vote down
+        <a href="#" class="vote vote-down" data-id="<%= lookup.id %>">
+          <img src="/images/down.png">
         </a>
       </td>
     </tr>
