@@ -1,2 +1,17 @@
-<h1>Lookups#search</h1>
-<p>Find me in app/views/lookups/search.html.erb</p>
+<div id="wrapper">
+  <%= render 'form' %>
+
+  <table class="table table-stripped">
+  <% @lookups.each do |lookup| %>
+    <thead>
+      <th>Domain</th>
+      <th>Ip</th>
+      <th>Trust</th>
+    </thead>
+    <tr>
+      <td><%= lookup.domain %></td>
+      <td><%= lookup.ip %></td>
+      <td><%= lookup.trust %></td>
+    </tr>
+  <% end %>
+</div>

@@ -1,9 +1,11 @@
 class LookupsController < ApplicationController
   def lookup_form
+    @domain = nil
   end
 
   def search
-    @lookup = Lookup.where(:domain=>params[:domain])
+    @domain = params[:domain]
+    @lookups = Lookup.where(:domain=>@domain)
   end
 
   def dump
