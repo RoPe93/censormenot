@@ -1,6 +1,7 @@
-<form action="/search" method="post" accept-charset="utf-8">
-
-  <%= text_field_tag :domain, @domain, :placeholder => "Domain" %>
-  <p><input type="submit" value="Search"/></p>
+<form action="/search" method="post" accept-charset="utf-8" id="search-form">
+  <div class="control-group">
+    <%= text_field_tag :domain, @domain, :placeholder => "Domain" %>
+    <input type="submit" class="btn btn-primary btn-large" value="Search"/>
+  </div>
 </form>
 

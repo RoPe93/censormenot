@@ -5,7 +5,7 @@ class LookupsController < ApplicationController
 
   def search
     @domain = params[:domain]
-    @lookups = Lookup.where(:domain=>@domain).order("trust DESC")
+    @lookups = Lookup.where("domain like '%#{@domain}%'").order("trust DESC")
   end
 
   def dump
@@ -23,7 +23,7 @@ class LookupsController < ApplicationController
     if @lookup
       @lookup.trust = @vote
       if @lookup.save
-        render :text => "Lookup saved"
+        render :text => "Vote registered"
       else
         render :text => "There was some error"
       end

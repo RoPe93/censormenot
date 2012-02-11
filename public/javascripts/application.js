@@ -6,7 +6,6 @@ function vote(evt, vote) {
   $('.trust[data-id='+id+']').html(vote+'.0');
 
   $.post(url, data, function(response) {
-    alert(response);
     showFlashMessage(response);
   });
 }

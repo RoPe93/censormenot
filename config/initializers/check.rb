@@ -61,22 +61,22 @@ end
 scheduler = Rufus::Scheduler.start_new
 
 def check_server(host, port)
-  #begin
+  begin
     p "#{host}:#{port}"
     socket = TCPSocket.new(host, port)
     socket.close()
     hp = HostAndPort.new({:name=>"#{host}:#{port}"})
     p "S-a salvat #{hp.save()}"
 
-  #rescue
-  #end
-end
-
-scheduler.every("5s") do
-  hosts = get_random_ips
-  hosts.each do |host|
-    host = host.join('.')
-    p host
-    check_server(host, 3000)
+  rescue
   end
 end
+
+#scheduler.every("5s") do
+  #hosts = get_random_ips
+  #hosts.each do |host|
+    #host = host.join('.')
+    #p host
+    #check_server(host, 3000)
+  #end
+#end

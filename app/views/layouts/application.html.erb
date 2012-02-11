@@ -10,7 +10,16 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/">Censormenot</a>
+      </div>
+    </div>
+  </div>
+
   <div class="container"%>
+    <div id="flash_messages"></div>
     <%= yield %>
   </div>
 
