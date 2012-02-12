@@ -10,6 +10,7 @@ As a result of the seizure, the targeted site's traffic instantly drops to zero 
 CensorMeNot aims to be your mechanism of choice for preemptively storing DNS lookups ahead of time, while your favorite websites are still alive. This information is carefully propagated between participating nodes on the Internet using the principles of peer-to-peer (P2P) networks.
 
 At the present time, CensorMeNot's architecture consists of four major components:
+
 * browser-based, local search functionality (implemented), the ability to query your locally stored, trusted database;
 * dataset sharing (implemented), the ability to let other peers retrieve a copy of your entire database (in JSON format);
 * peer discovery (implemented);
