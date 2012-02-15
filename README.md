@@ -19,3 +19,6 @@ At the present time, CensorMeNot's architecture consists of four major component
 CensorMeNot is written in Ruby on Rails and is currently at the prototype stage.
 
 License: [Affero GPL](http://www.gnu.org/licenses/agpl.html).
+
+A live presentation of CensorMeNot (in Romanian language) can be seen [here](http://www.youtube.com/watch?v=YNZDhPIdaho).
+
