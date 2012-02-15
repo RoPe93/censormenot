@@ -12,8 +12,8 @@ CensorMeNot aims to be your mechanism of choice for preemptively storing DNS loo
 At the present time, CensorMeNot's architecture consists of four major components:
 
 * browser-based, local search functionality (implemented), the ability to query your locally stored, trusted database;
-* dataset sharing (implemented), the ability to let other peers retrieve a copy of your entire database (in JSON format);
-* peer discovery (implemented);
+* dataset sharing (implemented), the ability to let other peers retrieve a copy of your entire database (in JSON format). This feature will be obsoleted in favor of a multicast-based approach;
+* peer discovery (it is implemented although somewhat inefficient);
 * smart/safe sync of the local database with previously discovered peers (feature not yet implemented), the ability to leverage IP address blacklists which are actively being maintained to support users of the popular PeerGuardian software.
 
 CensorMeNot is written in Ruby on Rails and is currently at the prototype stage.
