@@ -22,3 +22,34 @@ License: [Affero GPL](http://www.gnu.org/licenses/agpl.html).
 
 A live presentation of CensorMeNot (in Romanian language) can be seen [here](http://www.youtube.com/watch?v=YNZDhPIdaho).
 
+Installation (DEB-based Linux distributions)
+____________________________________________
+
+<strong>Is your DPKG package database up to date?</strong>
+<code>sudo aptitude update</code>
+<strong>We need some *-dev packages:</strong>
+<code>sudo aptitude install zlib1g-dev libsqlite3-dev</code>
+<strong>Install RVM (visit [the RVM site](http://beginrescueend.com/rvm/install/) for reference, but do follow the instructions below):</strong>
+<code>bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)</code>
+<strong>Using your favorite text editor, append the line below to the end of your ~/.bashrc:</strong>
+<code>[[ -s ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm</code>
+<strong>Close the terminal session you're in, open a new one.</strong>
+<strong>Install the version of openssl required by RVM (this process takes a while, please be patient):</strong>
+<code>rvm pkg install openssl</code>
+<strong>Install Ruby version 1.9.2, including binding for openssl (this process takes a while, please be patient):</strong>
+<code>rvm install 1.9.2 -C --with-openssl-dir=~/.rvm/usr</code>
+<strong>Set your preference for version 1.9.2 of Ruby:</strong>
+<code>rvm --default use 1.9.2</code>
+<strong>Install the latest version of Rails and the Rufus scheduler (this process takes a while, please be patient):</strong>
+<code>gem install --no-ri --no-rdoc rails rufus-scheduler</code>
+<strong>Double-check Rails has been installed correctly:</strong>
+<code>rails -v</code>
+<strong>Grab the latest copy of CensorMeNot:</strong>
+<code>git clone https://github.com/dserban/censormenot.git</code>
+<strong>Install bundles, sync the database and start the server:</strong>
+<code>cd censormenot</code>
+<code>bundle install</code>
+<code>rake db:migrate</code>
+<code>rails s</code>
+<strong>Open your browser and visit [http://localhost:3000/](http://localhost:3000/):</strong>
+
