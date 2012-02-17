@@ -75,5 +75,5 @@ A live presentation of CensorMeNot (in Romanian language) can be seen [here](htt
 
 <code>rails s</code>
 
-<strong>Open your browser and visit [http://localhost:3000/](http://localhost:3000/):</strong>
+<strong>Open your browser and visit [http://localhost:3000/](http://localhost:3000/)</strong>
 
