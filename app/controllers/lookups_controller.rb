@@ -31,4 +31,25 @@ class LookupsController < ApplicationController
       render :text => "Lookup not found"
     end
   end
+
+  def index
+    @lookups = Lookup.all
+  end
+
+  def new
+    @lookup = Lookup.new()
+  end
+
+  def create
+    @lookup = Lookup.new(params[:lookup])
+    @lookup.trust = 1
+
+    respond_to do |format|
+      if @lookup.save
+        format.html { redirect_to "/lookups", :notice => "Lookup saved" }
+      else
+        format.html { render :action => "new" }
+      end
+    end
+  end
 end

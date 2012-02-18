@@ -5,4 +5,9 @@ Censormenot::Application.routes.draw do
 
   get "dump", :to => "lookups#dump"
   post "vote", :to => "lookups#vote"
+
+  get "lookups/new/", :to => "lookups#new"
+  post "lookups/new/", :to => "lookups#create"
+
+  get "lookups/", :to => "lookups#index"
 end
