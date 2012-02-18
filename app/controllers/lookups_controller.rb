@@ -4,7 +4,7 @@ class LookupsController < ApplicationController
   end
 
   def search
-    @domain = params[:domain].gsub(/[^a-z\-\.]/, "")
+    @domain = params[:domain].gsub(/[^a-zA-Z0-9\-\.]/, "")
     @lookups = Lookup.where("domain like '%#{@domain}%'").order("trust DESC")
   end
 
