@@ -15,4 +15,5 @@ class StagedRecord < ActiveRecord::Base
       lookup.update_attributes(:trust => average)
     end
   end
+
 end

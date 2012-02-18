@@ -33,6 +33,7 @@ GEM
     erubis (2.7.0)
     hike (1.2.1)
     i18n (0.6.0)
+    ipaddress (0.8.0)
     journey (1.0.1)
     json (1.6.5)
     mail (2.4.1)
@@ -85,6 +86,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ipaddress
   rails (= 3.2.1)
   rufus-scheduler
   sqlite3
