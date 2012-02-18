@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218100922) do
+ActiveRecord::Schema.define(:version => 20120218142710) do
+
+  create_table "blocked_ranges", :force => true do |t|
+    t.integer  "start_ip"
+    t.integer  "end_ip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "lookups", :force => true do |t|
     t.string   "domain"

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_ip: 1
+  end_ip: 1
+
+two:
+  start_ip: 1
+  end_ip: 1
