@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211110452) do
+ActiveRecord::Schema.define(:version => 20120218095905) do
 
   create_table "lookups", :force => true do |t|
     t.string   "domain"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120211110452) do
     t.float    "trust"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "vote"
   end
 
   add_index "lookups", ["domain"], :name => "index_lookups_on_domain"
