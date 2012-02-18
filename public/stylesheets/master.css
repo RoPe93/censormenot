@@ -1,3 +1,7 @@
+.clear {
+  clear: both;
+}
+
 #wrapper {
   margin-top: 100px;
 }
@@ -22,3 +26,7 @@
   margin-top: -8px;
 }
 
+.create_new {
+  margin-bottom: 20px;
+  float: right;
+}

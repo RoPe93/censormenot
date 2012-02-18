@@ -1,0 +1,26 @@
+<div id="wrapper">
+
+<div class="create_new">
+  <a href="/requests/new/" class="btn btn-success">Create request</a>
+</div>
+<div class="clear"></div>
+
+<% if @requests.size > 0 %>
+  <table class="table table-stripped" id="search-results">
+    <thead>
+      <th>Domain</th>
+    </thead>
+
+  <% @requests.each do |lookup| %>
+    <tr>
+      <td><%= lookup.domain %></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <div class="alert alert-block">
+    No requests found.
+  </div>
+<% end %>
+
+</div>

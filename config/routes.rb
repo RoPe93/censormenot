@@ -8,6 +8,9 @@ Censormenot::Application.routes.draw do
 
   get "lookups/new/", :to => "lookups#new"
   post "lookups/new/", :to => "lookups#create"
-
   get "lookups/", :to => "lookups#index"
+
+  get "requests/new", :to => "requests#new"
+  post "requests/new/", :to => "requests#create"
+  get "requests/", :to => "requests#index"
 end
