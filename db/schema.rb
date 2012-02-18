@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218100445) do
+ActiveRecord::Schema.define(:version => 20120218100922) do
 
   create_table "lookups", :force => true do |t|
     t.string   "domain"
@@ -29,5 +29,14 @@ ActiveRecord::Schema.define(:version => 20120218100445) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "staged_records", :force => true do |t|
+    t.string "domain"
+    t.string "answered_by"
+    t.string "ip"
+    t.float  "trust"
+  end
+
+  add_index "staged_records", ["domain", "answered_by"], :name => "index_staged_records_on_domain_and_answered_by", :unique => true
 
 end

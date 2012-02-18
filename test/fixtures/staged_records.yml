@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  domain: MyString
+  answered_by: MyString
+  ip: MyString
+  trust: 1.5
+
+two:
+  domain: MyString
+  answered_by: MyString
+  ip: MyString
+  trust: 1.5
