@@ -4,8 +4,6 @@ require 'socket'
 require 'ipaddr'
 require 'ipaddress'
 
-scheduler = Rufus::Scheduler.start_new
-
 def valid_domain?(domain)
   domain_regex = /^[a-zA-Z0-9\-\.]+/
   domain =~ domain_regex
@@ -42,29 +40,34 @@ def valid?(msg, info)
   return true
 end
 
-scheduler.in("0s") do
-  multicast_addr = "225.192.192.192"
-  port = 25192
+if RUNNING_SERVER
+  scheduler = Rufus::Scheduler.start_new
 
-  ip =  IPAddr.new(multicast_addr).hton + IPAddr.new("0.0.0.0").hton
 
-  sock = UDPSocket.new
-  sock.setsockopt(Socket::IPPROTO_IP, Socket::IP_ADD_MEMBERSHIP, ip)
-  sock.bind(Socket::INADDR_ANY, port)
+  scheduler.in("0s") do
+    multicast_addr = "225.192.192.192"
+    port = 25192
 
-  loop do
-    msg, info = sock.recvfrom(1024)
+    ip =  IPAddr.new(multicast_addr).hton + IPAddr.new("0.0.0.0").hton
 
-    if not valid? msg, info
-      next
-    end 
+    sock = UDPSocket.new
+    sock.setsockopt(Socket::IPPROTO_IP, Socket::IP_ADD_MEMBERSHIP, ip)
+    sock.bind(Socket::INADDR_ANY, port)
 
-    data = msg.split('|')
+    loop do
+      msg, info = sock.recvfrom(1024)
 
-    StagedRecord.create :domain => data[2],
-        :ip => data[3],
-        :trust => data[4],
-        :answered_by => info[2]
+      if not valid? msg, info
+        next
+      end 
 
+      data = msg.split('|')
+
+      StagedRecord.create :domain => data[2],
+          :ip => data[3],
+          :trust => data[4],
+          :answered_by => info[2]
+
+    end
   end
 end
