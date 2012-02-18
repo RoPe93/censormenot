@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  before_filter  :allow_localhost_only
+
   def new
     @request = RequestedDomain.new
   end

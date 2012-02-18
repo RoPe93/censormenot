@@ -1,8 +1,9 @@
+<% if is_localhost? %>
 <div class="create_new">
   <a href="/lookups/new/" class="btn btn-success">Create Lookup</a>
 </div>
-
 <div class="clear"></div>
+<% end %>
 
 <% if @lookups.size > 0 %>
   <table class="table table-stripped" id="search-results">

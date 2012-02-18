@@ -14,12 +14,14 @@
     <div class="navbar-inner">
       <div class="container">
         <a class="brand" href="/">CensorMeNot</a>
+        <% if is_localhost? %>
         <ul class="nav">
           <li><a href="/lookups">Lookups</a>
           <li><a href="/requests">Requests</a>
           <li><a href="/lookups/new/">New Lookup</a></li>
           <li><a href="/requests/new/">New Request</a></li>
         </ul>
+        <% end %>
       </div>
     </div>
   </div>

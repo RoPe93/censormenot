@@ -1,4 +1,6 @@
 class LookupsController < ApplicationController
+  before_filter :allow_localhost_only, :except => [:lookup_form, :search]
+
   def lookup_form
     @domain = nil
   end
