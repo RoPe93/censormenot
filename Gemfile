@@ -8,6 +8,7 @@ gem 'rails', '3.2.1'
 gem 'sqlite3'
 gem 'rufus-scheduler'
 gem 'ipaddress'
+gem 'zip'
 
 # Use unicorn as the web server
 # gem 'unicorn'
