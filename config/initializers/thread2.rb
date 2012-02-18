@@ -4,41 +4,6 @@ require 'socket'
 require 'ipaddr'
 require 'ipaddress'
 
-def valid_domain?(domain)
-  domain_regex = /^[a-zA-Z0-9\-\.]+/
-  domain =~ domain_regex
-end
-
-def valid_ip?(ip)
-  IPAddress.valid? ip
-end
-
-def valid_trust?(trust)
-  begin
-    x = Float(trust)
-    0 <= x and x <= 1 
-  rescue
-    false
-  end
-end
-
-def valid?(msg, info)
-  # TODO: validate incomming ip address
-  
-  data = msg.split('|')
-
-  return false if data[0] != "censormenot"
-  
-  return false if data[1] != "a"
-  
-  return false if not valid_domain? data[2]
-
-  return false if not valid_ip? data[3]
-
-  return false if not valid_trust? data[4]
-
-  return true
-end
 
 if RUNNING_SERVER
   scheduler = Rufus::Scheduler.start_new
@@ -57,7 +22,7 @@ if RUNNING_SERVER
     loop do
       msg, info = sock.recvfrom(1024)
 
-      if not valid? msg, info
+      if not valid_answer? msg, info
         next
       end 
 

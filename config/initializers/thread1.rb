@@ -4,7 +4,7 @@ require 'socket'
 def send_request(request)
   # Send multicast packet containing a query
   multicast_addr = "225.192.192.192"
-  port = 25192
+  port = 25193
 
   begin
     socket = UDPSocket.open
@@ -28,7 +28,6 @@ if RUNNING_SERVER
         send_request request
         sleep 10
       end
-      sleep 10
     end
   end
 end

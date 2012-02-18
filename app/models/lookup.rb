@@ -7,4 +7,8 @@ class Lookup < ActiveRecord::Base
   before_validation(:on => :create) do
     return Lookup.where(:domain => domain, :ip => ip).size == 0
   end
+
+  def to_answer
+    "censormenot|a|#{self.domain}|#{self.ip}|#{self.trust}"
+  end
 end
