@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211142655) do
-
-  create_table "host_and_ports", :force => true do |t|
-    t.string   "name"
-    t.string   "unique"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20120211110452) do
 
   create_table "lookups", :force => true do |t|
     t.string   "domain"
