@@ -1,3 +1,9 @@
+# United we stand against DNS terrorism
+
+# THE STORY
+
+One weekend last year I woke up and went to my computer to search for some online episodes. Instead of the usual greeting page with a search box I was expecting to see, I saw a threatening message informing me that the domain had been seized, and lecturing me on the topic of intellectual property [(link}](http://tvshack.net/IPRC_Seized_2010_11_2011_04.gif). Since I don't believe in this imaginary form of property, and since I am of the opinion that the only type of property that can exist is physical property, I was rather offended and decided to do something about this abuse. My first idea was to build a community around a distributed, peer-to-peer knowledge base. And since I'm passionate about software, I decided to start a new open-source project to bring these ideas to life. Hopefully when the software is mature enough, a community of users will naturally form around it.
+
 # SUMMARY
 
 CensorMeNot is a decentralized, censorship-resilient, cooperative service for looking up IP addresses of Internet domains the DNS records of which have been abusively tampered with by the ICANN at the behest of malicious organizations.
@@ -8,20 +14,13 @@ As a result of the seizure, the targeted site's traffic instantly drops to zero 
 
 CensorMeNot aims to be your mechanism of choice for preemptively storing DNS lookups ahead of time, while your favorite websites are still alive. This information is carefully propagated between participating nodes on the Internet using the principles of peer-to-peer (P2P) networks.
 
-At the present time, CensorMeNot's architecture consists of four major components:
-
-* browser-based, local search functionality (implemented), the ability to query your locally stored, trusted database;
-* dataset sharing (implemented), the ability to let other peers retrieve a copy of your entire database (in JSON format). This feature will be obsoleted in favor of a multicast-based approach;
-* peer discovery (it is implemented although somewhat inefficient);
-* smart/safe sync of the local database with previously discovered peers (feature not yet implemented), the ability to leverage IP address blacklists which are actively being maintained to support users of the popular PeerGuardian software.
-
 CensorMeNot is written in Ruby on Rails and is currently at the prototype stage.
 
 License: [Affero GPL](http://www.gnu.org/licenses/agpl.html).
 
 A live presentation of CensorMeNot (in Romanian language) can be seen [here](http://www.youtube.com/watch?v=YNZDhPIdaho).
 
-<h2>Installation (DEB-based Linux distributions)</h2>
+# Installation (DEB-based Linux distributions)
 
 <strong>Is your DPKG package database up to date?</strong>
 
