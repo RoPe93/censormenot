@@ -1,4 +1,3 @@
-require 'net/http'
 require 'socket'
 
 def send_answer(answer)
@@ -23,7 +22,7 @@ if RUNNING_SERVER
   scheduler = Rufus::Scheduler.start_new
 
   scheduler.in("0s") do
-    multicast_addr = "225.192.192.192"
+    multicast_addr = "225.193.193.193"
     port = 25193
 
     ip =  IPAddr.new(multicast_addr).hton + IPAddr.new("0.0.0.0").hton
