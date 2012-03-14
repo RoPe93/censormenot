@@ -1,5 +1,3 @@
-require 'net/http'
-
 require 'socket'
 require 'ipaddr'
 require 'ipaddress'
