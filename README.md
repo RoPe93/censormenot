@@ -1,4 +1,4 @@
-<h2>SUMMARY</h2>
+# SUMMARY
 
 CensorMeNot is a decentralized, censorship-resilient, cooperative service for looking up IP addresses of Internet domains the DNS records of which have been abusively tampered with by the ICANN at the behest of malicious organizations.
 
