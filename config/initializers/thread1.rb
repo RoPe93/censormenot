@@ -1,9 +1,8 @@
-require 'net/http'
 require 'socket'
 
 def send_request(request)
   # Send multicast packet containing a query
-  multicast_addr = "225.192.192.192"
+  multicast_addr = "225.193.193.193"
   port = 25193
 
   begin
