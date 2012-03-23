@@ -28,7 +28,7 @@ A live presentation of CensorMeNot (in Romanian language) can be seen [here](htt
 
 <strong>We need some *-dev packages:</strong>
 
-<code>sudo apt-get install build-essential curl libssl-dev libreadline5 libreadline5-dev zlib1g zlib1g-dev libsqlite3-dev</code>
+<code>sudo apt-get install autoconf build-essential curl libssl-dev libreadline5 libreadline5-dev zlib1g zlib1g-dev libsqlite3-dev</code>
 
 <strong>Install RVM (visit [the RVM site](http://beginrescueend.com/rvm/install/) for reference, but do follow the instructions below):</strong>
 
@@ -40,7 +40,7 @@ A live presentation of CensorMeNot (in Romanian language) can be seen [here](htt
 
 <strong>Close the terminal session you're in, open a new one.</strong>
 
-<strong>Install Ruby version 1.9.3, including binding for openssl (this process takes a while, please be patient):</strong>
+<strong>Install Ruby version 1.9.3:</strong>
 
 <code>rvm install 1.9.3</code>
 
