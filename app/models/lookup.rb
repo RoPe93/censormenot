@@ -1,6 +1,8 @@
 class Lookup < ActiveRecord::Base
   validates :domain, :presence => true
   validates :ip, :presence => true
+  
+  attr_accessible :domain, :ip, :trust
 
   #validates_uniqueness_of :ip, :score => [:domain]
 

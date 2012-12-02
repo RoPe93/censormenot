@@ -17,7 +17,7 @@
   <% @lookups.each do |lookup| %>
     <tr>
       <td><%= lookup.domain %></td>
-      <td><%= lookup.ip %></td>
+      <td><%= link_to lookup.ip, "http://#{lookup.ip}", :target => "_blank" %></td>
       <td class="trust" data-id="<%= lookup.id %>"><%= lookup.trust %></td>
       <td style="text-align: right" width="25%">
         <a href="#" class="vote vote-up" data-id="<%= lookup.id %>">

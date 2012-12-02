@@ -1,5 +1,6 @@
 class StagedRecord < ActiveRecord::Base
   validates_uniqueness_of :answered_by, :scope => :domain
+  attr_accessible :answered_by, :domain, :ip, :trust
 
   def self.aggregate
     groups = group("domain", "ip")

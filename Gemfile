@@ -1,34 +1,37 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 gem 'rufus-scheduler'
 gem 'ipaddress'
 gem 'zip'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development do
+  gem 'pg'
+  gem 'sqlite3'
+  gem 'zeus'
+  gem 'quiet_assets'
+  gem 'sextant'
+  gem 'foreman'
+  gem 'pry'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :production do
+  gem 'pg'
+  gem 'unicorn'
+end
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  gem 'pg'
+end
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+end
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+gem 'font-awesome-sass-rails'
+gem 'jquery-rails'
+gem 'delayed_job_active_record'
+gem 'turbolinks'

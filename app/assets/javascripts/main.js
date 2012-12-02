@@ -24,3 +24,4 @@ $(function() {
   $('.vote-up').click(voteUp);
   $('.vote-down').click(voteDown);
 });
+
