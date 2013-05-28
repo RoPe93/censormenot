@@ -1,10 +1,13 @@
 namespace :multicast do
   desc "Receive a multicast packet"
-  task :recieve => :environment do
+  task :receive => :environment do
+      puts "Started receiving lookups on port 25193"
+    Censormenot::Receiver.listen
   end
   
   desc "Answer lookup requests"
   task :answerer => :environment do
+    puts "Started answering requests on port 25192"
     Censormenot::Answerer.work
   end
   
@@ -15,6 +18,7 @@ namespace :multicast do
     if request.nil?
       logger.error "Request with id: #{args[:id]} does not exist"
     else
+      puts "Sending request for domain #{request.domain}"
       Censormenot::Sender.send_request request
     end
   end

@@ -1,6 +1,7 @@
 require 'socket'
+require 'ipaddr'
 
-module Charmroom
+module Censormenot
   module Answerer
     module_function    
     def send_answer(answer)
@@ -32,14 +33,14 @@ module Charmroom
     
       loop do
         msg, info = sock.recvfrom(1024)
-        puts "Received Query"
+        
         if not valid_query? msg, info
           puts "Query not valid"
           next
         end
 
         data = msg.split('|')
-
+        puts "Received Query for domain #{data[2]}"
         answer = Lookup.where(:domain => data[2]).order("trust DESC").first
         if not answer.nil?
           send_answer answer

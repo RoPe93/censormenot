@@ -4,7 +4,8 @@ require 'ipaddress'
 
 
 module Censormenot
-  class Receiver
+  module Receiver
+    module_function
     def listen
       multicast_addr = "225.192.192.192"
       port = 25192
@@ -24,6 +25,7 @@ module Censormenot
 
         data = msg.split('|')
 
+        puts "Received ip <#{data[3]}> for domain <#{data[2]}>"
         StagedRecord.create :domain => data[2],
                             :ip => data[3],
                             :trust => data[4],
